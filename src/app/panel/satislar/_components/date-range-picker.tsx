@@ -15,7 +15,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-interface DateRangePickerProps extends React.HTMLAttributes<HTMLDivElement> {
+interface DateRangePickerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onSelect"> {
   value: DateRange | undefined;
   onSelect: (range: DateRange | undefined) => void;
 }
@@ -42,10 +42,32 @@ export function DateRangePicker({
             <CalendarIcon className="mr-2 h-4 w-4" />
             {value?.from ? (
               value.to ? (
-                <>
-                  {format(value.from, "dd LLL, y", { locale: tr })} -{" "}
-                  {format(value.to, "dd LLL, y", { locale: tr })}
-                </>
+                (() => {
+                  const isToday = (date: Date) => {
+                    const today = new Date();
+                    return (
+                      date.getDate() === today.getDate() &&
+                      date.getMonth() === today.getMonth() &&
+                      date.getFullYear() === today.getFullYear()
+                    );
+                  };
+
+                  if (
+                    value.from &&
+                    value.to &&
+                    isToday(value.from) &&
+                    isToday(value.to)
+                  ) {
+                    return "Bugün";
+                  }
+
+                  return (
+                    <>
+                      {format(value.from, "dd LLL, y", { locale: tr })} -{" "}
+                      {format(value.to, "dd LLL, y", { locale: tr })}
+                    </>
+                  );
+                })()
               ) : (
                 format(value.from, "dd LLL, y", { locale: tr })
               )

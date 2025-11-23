@@ -143,7 +143,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/celul/kolikoli/src/generated/prisma",
+      "value": "/Users/egeonder/dev/kolikoli/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -152,17 +152,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/celul/kolikoli/prisma/schema.prisma",
+    "sourceFilePath": "/Users/egeonder/dev/kolikoli/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../../prisma",
   "clientVersion": "6.6.0",
@@ -171,7 +170,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
