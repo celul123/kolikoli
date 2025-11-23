@@ -71,6 +71,7 @@ export function SalesChart({ data, isHourly = false }: SalesChartProps) {
               left: 12,
               right: 12,
             }}
+            
           >
             <CartesianGrid vertical={false} />
             <XAxis
