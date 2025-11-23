@@ -133,29 +133,6 @@ export function CreateOrderDialog({
               )}
             />
           </div>
-          {/* <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="state" className="text-left">
-              Durum*
-            </Label>
-            <Controller
-              control={control}
-              name="state"
-              render={({ field }) => (
-                <Select onValueChange={field.onChange} {...field}>
-                  <SelectTrigger className="col-span-3">
-                    <SelectValue placeholder="Sipariş durumu seçin" />
-                  </SelectTrigger>
-                  <SelectContent color="orange">
-                    {Object.keys(STATES).map((state) => (
-                      <SelectItem key={state} value={state}>
-                        {STATES[state]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              )}
-            />
-          </div> */}
           <DialogFooter>
             <Button type="submit">Kaydet</Button>
           </DialogFooter>
